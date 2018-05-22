@@ -1,0 +1,51 @@
+{
+  "items": [
+    {
+      "id": "001",
+      "slug": "monster-ui-addressbooks",
+      "title": "Address Books",
+      "description": "Приложение для административного интерфейса системы SIP-телефонии Monster UI",
+      "features": [
+        "Позволяет управлять адресами в адресной книге"
+      ],
+      "timeText": "Февраль 2018",
+      "previewImage": "/static/portfolio/2018-monster-ui-addressbooks/screen001_preview.png",
+      "images": [
+        "/static/portfolio/2018-monster-ui-addressbooks/screen001.png"
+      ],
+      "tags": [
+        "monster-ui",
+        "addressbooks",
+        "sip",
+        "javascript",
+        "html",
+        "css"
+      ]
+    },
+    {
+      "id": "002",
+      "slug": "bitcoin-browser-extension",
+      "title": "Bitcoin Browser Extension",
+      "description": "Расширение для браузеров Chrome и Firefox.",
+      "features": [
+        "Отображает график курса за выбранный период",
+        "Позволяет посчитать цену одной валюты в другой (калькулятор валют)",
+        "Отображает на иконке текущий курс биткоина в одной из 20 валют мира"
+      ],
+      "timeText": "Май 2017",
+      "previewImage": "/static/portfolio/2017-bitcoin-browser-extension/screen001.png",
+      "images": [
+        "/static/portfolio/2017-bitcoin-browser-extension/screen001.png",
+        "/static/portfolio/2017-bitcoin-browser-extension/screen002.png",
+        "/static/portfolio/2017-bitcoin-browser-extension/screen003.png"
+      ],
+      "tags": [
+        "chrome",
+        "extension",
+        "javascript",
+        "html",
+        "css"
+      ]
+    }
+  ]
+}
