@@ -1,8 +1,12 @@
-# vbarkasov-vue
+# Vladimir Barkasov - Portfolio site
 
-> The personal site of Vladimir Barkasov
+Simple portfolio site using Vue framework
 
-## Build Setup
+Feautures:
+- minimalistic design
+- fast speed
+
+### Build Setup
 
 ``` bash
 # install dependencies
