@@ -2,7 +2,7 @@
 
 Simple portfolio site using Vue framework
 
-Feautures:
+Features:
 - minimalistic design
 - fast speed
 
