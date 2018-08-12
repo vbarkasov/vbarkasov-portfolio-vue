@@ -1,22 +1,30 @@
 <template>
-  <nav class="my-2 my-md-0 mr-md-3">
+  <nav class="my-2 my-md-0 mr-md-3 text-center">
     <a v-for="item in menuItems" :href="item.href" class="p-2 text-dark">{{ item.title }}</a>
   </nav>
 </template>
 
 <script>
 export default {
-  name: 'menu',
+  name: 'MenuMain',
   data () {
     return {
       menuItems: [
         {
-          "title": 'Главная',
+          "title": 'Portfolio',
           "href": '#/'
         },
         {
-          "title": 'Расширения',
-          "href": '#/tags/extension'
+          "title": 'Browser Extensions',
+          "href": '#/page/browser-extensions-development'
+        },
+        {
+          "title": 'About me',
+          "href": '#/page/about'
+        },
+        {
+          "title": 'Contact',
+          "href": '#/page/contacts'
         }
       ]
     }

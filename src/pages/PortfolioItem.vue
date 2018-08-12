@@ -4,17 +4,17 @@
       <h1>{{ item.title }}</h1>
       <p v-html="item.description"></p>
       <div class="mb-3">
-        <router-link v-for="tag in item.tags" :to="{ name: 'Tags', params: { tags: tag }}" class="btn btn-light btn-sm mr-1 mb-1">
+        <router-link v-for="tag in item.tags" :key="tag" :to="{ name: 'Tags', params: { tags: tag }}" class="btn btn-light btn-sm mr-1 mb-1">
           {{ tag }}
         </router-link>
       </div>
       <ul>
         <li v-for="feature in item.features" class="text-left">{{ feature }}</li>
       </ul>
-      <div v-for="image in item.images">
+      <div v-for="image in item.images" class="mb-4">
         <img :src="image" alt="" class="item-image"/>
       </div>
-      <div class="mt-2">
+      <div>
         <small class="text-muted">{{ item.timeText }}</small>
       </div>
     </div>

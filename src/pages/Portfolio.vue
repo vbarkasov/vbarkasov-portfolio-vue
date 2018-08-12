@@ -1,5 +1,5 @@
 <template>
-  <div class="portfolio-list card-columns">
+  <div class="portfolio-list card-columns px-4">
     <portfolio-card
       v-for="item in items"
       v-bind:item="item"

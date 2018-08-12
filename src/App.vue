@@ -1,21 +1,18 @@
 <template>
   <div id="app" class="container-fluid">
-    <header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar">
-      <a href="" class="navbar-brand mr-0 mr-md-2">
-        <img src="./assets/logo-fire.png">
-      </a>
-      <Menu></Menu>
-    </header>
-    <div class="row">
-      <div class="col-12 align-self-center">
+    <Header></Header>
+    <div class="row mb-3 content-container">
+      <div class="col-12">
         <router-view v-bind:items="items"/>
       </div>
     </div>
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
-import Menu from './components/Menu.vue'
+import Header from './components/Header.vue'
+import Footer from './components/Footer.vue'
 
 export default {
   name: 'App',
@@ -26,7 +23,7 @@ export default {
     }
   },
   mounted: function () {
-    var self = this;
+    const self = this;
     $.ajax({
       url: '/static/portfolio/data.json',
       dataType: 'json'
@@ -38,21 +35,17 @@ export default {
     });
   },
   components: {
-    Menu
+    Header,
+    Footer
   }
 }
 </script>
 
 <style>
-  @import '../static/bootstrap.min.css';
-  #app {
-    /*font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    margin-top: 60px;*/
-  }
+  @import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+  @import 'assets/css/main.css';
+
+  #app {}
 
   .card {
     border: 1px solid rgba(0,0,0,.3)

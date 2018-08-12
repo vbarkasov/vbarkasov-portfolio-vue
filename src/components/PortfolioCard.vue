@@ -1,11 +1,13 @@
 <template>
   <div class="card" :data-id="item.id">
-    <img class="card-img-top" :src="item.previewImage" :alt="item.title">
+    <router-link :to="{ name: 'PortfolioItem', params: { itemSlug: item.slug }}" @click.native="scrollToTop">
+      <img class="card-img-top" :src="item.previewImage" :alt="item.title">
+    </router-link>
     <div class="card-body">
-      <h5 class="card-title">{{ item.title }}</h5>
+      <h2 class="card-title">{{ item.title }}</h2>
       <p class="card-text" v-html="item.description"></p>
       <div class="mb-3">
-        <router-link v-for="tag in item.tags" :to="{ name: 'Tags', params: { tags: tag }}" class="btn btn-light btn-sm mr-1 mb-1">
+        <router-link v-for="tag in item.tags" :key="tag"  :to="{ name: 'Tags', params: { tags: tag }}" class="btn btn-light btn-sm mr-1 mb-1">
           {{ tag }}
         </router-link>
       </div>
@@ -29,8 +31,8 @@ export default {
   },
   props: ['item'],
   methods: {
-    moreInfo: function(itemId) {
-      alert('click ' + itemId);
+    scrollToTop: function() {
+      window.scrollTo(0,0)
     }
   }
 }

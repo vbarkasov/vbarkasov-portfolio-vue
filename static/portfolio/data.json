@@ -4,11 +4,11 @@
       "id": "001",
       "slug": "monster-ui-addressbooks",
       "title": "Address Books",
-      "description": "Приложение для административного интерфейса системы SIP-телефонии Monster UI",
+      "description": "SIP-application for Monster UI framework",
       "features": [
-        "Позволяет управлять адресами в адресной книге"
+        "Address books managment"
       ],
-      "timeText": "Февраль 2018",
+      "timeText": "February 2018",
       "previewImage": "/static/portfolio/2018-monster-ui-addressbooks/screen001_preview.png",
       "images": [
         "/static/portfolio/2018-monster-ui-addressbooks/screen001.png"
@@ -26,13 +26,13 @@
       "id": "002",
       "slug": "bitcoin-browser-extension",
       "title": "Bitcoin Browser Extension",
-      "description": "Расширение для браузеров Chrome и Firefox.",
+      "description": "Browser extension for Google Chrome and Firefox.",
       "features": [
-        "Отображает график курса за выбранный период",
-        "Позволяет посчитать цену одной валюты в другой (калькулятор валют)",
-        "Отображает на иконке текущий курс биткоина в одной из 20 валют мира"
+        "Displays graph of currency rate for the selected period",
+        "Allows you to calculate the price of one currency in another (currency calculator)",
+        "Displays on the icon the current bitcoin rate in one of the 20 currencies of the world"
       ],
-      "timeText": "Май 2017",
+      "timeText": "May 2017",
       "previewImage": "/static/portfolio/2017-bitcoin-browser-extension/screen001.png",
       "images": [
         "/static/portfolio/2017-bitcoin-browser-extension/screen001.png",
@@ -42,6 +42,157 @@
       "tags": [
         "chrome",
         "extension",
+        "javascript",
+        "html",
+        "css"
+      ]
+    },
+    {
+      "id": "003",
+      "title": "Alfa Bank JBZoo payment module for Joomla 3",
+      "slug": "alfa-bank-jbzoo-payment-module",
+      "description": "Payment module for JBZoo component of CMS Joomla 3",
+      "features": [
+        "Allow to pay in online store via the Alfa Bank"
+      ],
+      "timeText": "July 2016",
+      "previewImage": "/static/portfolio/2016-alfabank-jbzoo-payment-module/thumb.jpg",
+      "images": [
+        "/static/portfolio/2016-alfabank-jbzoo-payment-module/thumb.jpg",
+        "/static/portfolio/2016-alfabank-jbzoo-payment-module/screen_01.png"
+      ],
+      "tags": [
+        "php",
+        "jbzoo",
+        "joomla",
+        "alfabank",
+        "ecommerce",
+        "module"
+      ]
+    },
+    {
+      "id": "004",
+      "slug": "admin-interface-ecommerce-site",
+      "title": "Admin Interface for ecommerce site",
+      "description": "I made custom user interface for ecommerce site",
+      "features": [
+        "two column view",
+        "tabs orders",
+        "calculate total sum"
+      ],
+      "timeText": "2016",
+      "previewImage": "/static/portfolio/2016-magix-admin-ui/001.png",
+      "images": [
+        "/static/portfolio/2016-magix-admin-ui/001.png"
+      ],
+      "tags": [
+        "yii2",
+        "ecommerce",
+        "php",
+        "javascript",
+        "html",
+        "css"
+      ]
+    },
+    {
+      "id": "005",
+      "slug": "change-design-ecommerce-site-ocean-krasoty",
+      "title": "Change design of ecommerce site",
+      "description": "Change design of ecommerce site Ocean Krasoty",
+      "features": [],
+      "timeText": "2016",
+      "previewImage": "/static/portfolio/2016-ocean/preview.jpg",
+      "images": [
+        "/static/portfolio/2016-ocean/preview.jpg",
+        "/static/portfolio/2016-ocean/001.png",
+        "/static/portfolio/2016-ocean/002.jpg",
+        "/static/portfolio/2016-ocean/003.jpg"
+      ],
+      "tags": [
+        "netcat",
+        "php",
+        "html",
+        "css"
+      ]
+    },
+    {
+      "id": "006",
+      "slug": "kinopoisk-torrent-search",
+      "title": "Browser extension for search torrents",
+      "description": "This extension adds T-button near title of film in site kinopoisk.ru",
+      "features": [
+        "Fast search torrents"
+      ],
+      "timeText": "2017",
+      "previewImage": "/static/portfolio/2017-kinopoisk-torrent-search/screen.png",
+      "images": [
+        "/static/portfolio/2017-kinopoisk-torrent-search/screen.png"
+      ],
+      "tags": [
+        "chrome",
+        "extension",
+        "javascript",
+        "html",
+        "css",
+        "torrent"
+      ],
+      "links": [
+        {
+          "title": "Source code in Github",
+          "href": "https://github.com/vbarkasov/kinopoisk-torrent-search"
+        },
+        {
+          "title": "The extension in Google Store",
+          "href": "https://chrome.google.com/webstore/detail/kinopoisk-torrent-search/idohojlpejpilejggmonkihmmpfclnld"
+        }
+      ]
+    },
+    {
+      "id": "007",
+      "slug": "disallow-ads-vk-com",
+      "title": "Disallow ads in site vk.com",
+      "description": "The extension for google chrome, which disallow ads in social network vk.com",
+      "features": [
+        "dissalow ads banners",
+        "dissalow ads posts",
+        "dissalow ads audio"
+      ],
+      "timeText": "2018",
+      "previewImage": "/static/portfolio/2018-ubrat-reklamu-vk/screen_001.png",
+      "images": [
+        "/static/portfolio/2018-ubrat-reklamu-vk/screen_001.png",
+        "/static/portfolio/2018-ubrat-reklamu-vk/screen_002.png"
+      ],
+      "tags": [
+        "chrome",
+        "extension",
+        "javascript",
+        "html",
+        "css",
+        "vk",
+        "ads"
+      ]
+    },
+    {
+      "id": "008",
+      "slug": "vbarkasov-portfolio-site",
+      "title": "Portfolio site",
+      "description": "Simple personal portfolio site - fast, simple, ",
+      "features": [
+        "fastest porfolio",
+        "adaptive view",
+        "minimalistic design"
+      ],
+      "timeText": "August 2018",
+      "previewImage": "/static/portfolio/2018-portfolio-site/screen_001.png",
+      "images": [
+        "/static/portfolio/2018-portfolio-site/screen_001.png",
+        "/static/portfolio/2018-portfolio-site/screen_002.png",
+        "/static/portfolio/2018-portfolio-site/screen_003.png",
+        "/static/portfolio/2018-portfolio-site/screen_004.png"
+      ],
+      "tags": [
+        "vue",
         "javascript",
         "html",
         "css"

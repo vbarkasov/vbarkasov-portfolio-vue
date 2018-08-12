@@ -1,10 +1,13 @@
 <template>
-  <div class="portfolio-list card-columns">
-    <portfolio-card
-      v-for="result in results"
-      v-bind:item="result"
-      v-bind:key="result.id"
-    ></portfolio-card>
+  <div class="px-4">
+    <h1>Search results by tag: <span v-for="tag in tags" :key="tag">{{ tag }}</span></h1>
+    <div class="portfolio-list card-columns">
+      <portfolio-card
+        v-for="result in results"
+        v-bind:item="result"
+        v-bind:key="result.id"
+      ></portfolio-card>
+    </div>
   </div>
 </template>
 
@@ -52,5 +55,4 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped></style>
