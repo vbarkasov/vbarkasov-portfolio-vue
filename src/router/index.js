@@ -10,6 +10,7 @@ import Extensions from '@/pages/Extensions'
 Vue.use(Router);
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
@@ -40,6 +41,10 @@ export default new Router({
       path: '/page/browser-extensions-development',
       name: 'Extensions',
       component: Extensions
-    }
+    }/*,
+    {
+      path: '*',
+      component: NotFoundComponent
+    }*/
   ]
 })
