@@ -15,7 +15,7 @@
         <small class="text-muted">{{ item.timeText }}</small>
       </p>
       <router-link :to="{ name: 'PortfolioItem', params: { itemSlug: item.slug }}" class="btn btn-outline-primary">
-        Подробнее
+        More info
       </router-link>
     </div>
   </div>
