@@ -3,16 +3,30 @@
     <div class="item-block pb-md-4 mx-auto text-center">
       <h1>{{ item.title }}</h1>
       <p v-html="item.description"></p>
+
+      <ul class="features-list">
+        <li v-for="feature in item.features" class="text-left">{{ feature }}</li>
+      </ul>
+
+      <div v-for="link in item.links" class="mb-3">
+        <a :href="link.href" target="_blank" class="btn btn-secondary">
+          <fa-icon :icon="link.icon" />
+          {{ link.title }}
+          <fa-icon icon="external-link-alt" />
+        </a>
+      </div>
+
       <div class="mb-3">
-        <router-link v-for="tag in item.tags" :key="tag" :to="{ name: 'Tags', params: { tags: tag }}" class="btn btn-light btn-sm mr-1 mb-1">
+        <router-link
+          v-for="tag in item.tags"
+          :key="tag"
+          :to="{ name: 'Tags', params: { tags: tag }}"
+          class="btn btn-light btn-sm mr-1 mb-1">
           {{ tag }}
         </router-link>
       </div>
-      <ul>
-        <li v-for="feature in item.features" class="text-left">{{ feature }}</li>
-      </ul>
       <div v-for="image in item.images" class="mb-4">
-        <img :src="image" alt="" class="item-image"/>
+        <img :src="image" alt="" class="img-thumbnail item-image"/>
       </div>
       <div>
         <small class="text-muted">{{ item.timeText }}</small>
@@ -45,7 +59,6 @@ export default {
           break;
         }
       }
-
       return resultItem;
     }
   },
@@ -59,7 +72,6 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   h1 {
     font-size: 30px;
@@ -71,5 +83,9 @@ export default {
 
   .item-image {
     max-width: 100%;
+  }
+
+  .features-list {
+    display: inline-block;
   }
 </style>

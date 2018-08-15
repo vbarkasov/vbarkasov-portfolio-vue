@@ -139,11 +139,13 @@
       "links": [
         {
           "title": "Source code in Github",
-          "href": "https://github.com/vbarkasov/kinopoisk-torrent-search"
+          "href": "https://github.com/vbarkasov/kinopoisk-torrent-search",
+          "icon": ["fab", "github"]
         },
         {
-          "title": "The extension in Google Store",
-          "href": "https://chrome.google.com/webstore/detail/kinopoisk-torrent-search/idohojlpejpilejggmonkihmmpfclnld"
+          "title": "This extension in Google Store",
+          "href": "https://chrome.google.com/webstore/detail/kinopoisk-torrent-search/idohojlpejpilejggmonkihmmpfclnld",
+          "icon": ["fab", "google-play"]
         }
       ]
     },
@@ -177,9 +179,11 @@
       "id": "008",
       "slug": "vbarkasov-portfolio-site",
       "title": "Portfolio site",
-      "description": "Simple personal portfolio site - fast, simple, ",
+      "description": "The portfolio site of web developer",
       "features": [
-        "fastest porfolio",
+        "fast",
+        "simple",
+        "convenient",
         "adaptive view",
         "minimalistic design"
       ],
@@ -196,6 +200,13 @@
         "javascript",
         "html",
         "css"
+      ],
+      "links": [
+        {
+          "title": "Source code in Github",
+          "href": "https://github.com/vbarkasov/vbarkasov-portfolio-vue",
+          "icon": ["fab", "github"]
+        }
       ]
     }
   ]

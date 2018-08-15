@@ -4,6 +4,14 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons'
+import { faGithub, faGooglePlay } from '@fortawesome/free-brands-svg-icons'
+
+library.add(faGithub, faGooglePlay, faExternalLinkAlt);
+Vue.component('fa-icon', FontAwesomeIcon);
+
 Vue.config.productionTip = false;
 
 /* eslint-disable no-new */
