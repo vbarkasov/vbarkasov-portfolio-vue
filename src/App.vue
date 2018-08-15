@@ -28,7 +28,18 @@ export default {
       url: '/static/portfolio/data.json',
       dataType: 'json'
     }).done(function(data) {
-      self.items = Object.assign([], self.items, data.items);
+      const sortedItems = data.items.sort((a, b) => {
+          // sort by time (newest in up)
+          if(new Date(a.timeText) > new Date(b.timeText)) {
+            return -1;
+          }
+          if(new Date(a.timeText) < new Date(b.timeText)) {
+            return 1;
+          }
+          return 0
+      });
+
+      self.items = Object.assign([], self.items, sortedItems);
     }).fail(function(jqXHR, textStatus) {
       console.log(jqXHR);
       console.log(textStatus);
