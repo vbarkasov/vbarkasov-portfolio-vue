@@ -1,6 +1,9 @@
 <template>
   <div class="card" :data-id="item.id">
-    <router-link :to="{ name: 'PortfolioItem', params: { itemSlug: item.slug }}" @click.native="scrollToTop">
+    <router-link
+      :to="{ name: 'PortfolioItem', params: { itemSlug: item.slug }}"
+      @click.native="scrollToTop"
+    >
       <img class="card-img-top" :src="item.previewImage" :alt="item.title">
     </router-link>
     <div class="card-body">
@@ -14,7 +17,11 @@
       <p class="card-text time-text">
         <small class="text-muted">{{ item.timeText }}</small>
       </p>
-      <router-link :to="{ name: 'PortfolioItem', params: { itemSlug: item.slug }}" class="btn btn-outline-primary">
+      <router-link
+        :to="{ name: 'PortfolioItem', params: { itemSlug: item.slug }}"
+        class="btn btn-outline-primary"
+        @click.native="scrollToTop"
+      >
         More info
       </router-link>
     </div>
@@ -38,7 +45,6 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
   .card .time-text {
