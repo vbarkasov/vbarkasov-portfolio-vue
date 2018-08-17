@@ -36,6 +36,11 @@ export default {
         }
       ]
     }
+  },
+  methods: {
+    scrollToTop: function() {
+      window.scrollTo(0,0)
+    }
   }
 }
 </script>
