@@ -116,6 +116,12 @@ const webpackConfig = merge(baseWebpackConfig, {
         ignore: ['.*']
       }
     ]),
+    new CopyWebpackPlugin([
+      {
+        from: path.resolve(__dirname, '../server'),
+        to: config.build.assetsRoot
+      }
+    ]),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jquery: 'jquery',
