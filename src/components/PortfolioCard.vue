@@ -2,7 +2,7 @@
   <div class="card" :data-id="item.id">
     <router-link
       :to="{ name: 'PortfolioItem', params: { itemSlug: item.slug }}"
-      @click.native="scrollToTop"
+      v-on:click.native="scrollToTop"
     >
       <img class="card-img-top" :src="item.previewImage" :alt="item.title">
     </router-link>
@@ -10,7 +10,11 @@
       <h2 class="card-title">{{ item.title }}</h2>
       <p class="card-text" v-html="item.description"></p>
       <div class="mb-3">
-        <router-link v-for="tag in item.tags" :key="tag"  :to="{ name: 'Tags', params: { tags: tag }}" class="btn btn-light btn-sm mr-1 mb-1">
+        <router-link
+          v-for="tag in item.tags"
+          :key="tag"
+          :to="{ name: 'Tags', params: { tags: tag }}"
+          class="btn btn-light btn-sm mr-1 mb-1">
           {{ tag }}
         </router-link>
       </div>
@@ -20,7 +24,7 @@
       <router-link
         :to="{ name: 'PortfolioItem', params: { itemSlug: item.slug }}"
         class="btn btn-outline-primary"
-        @click.native="scrollToTop"
+        v-on:click.native="scrollToTop"
       >
         More info
       </router-link>
