@@ -1,10 +1,16 @@
 # Vladimir Barkasov - Portfolio site
 
-Simple portfolio site using Vue framework
+Simple portfolio site using [Vue framework](https://vuejs.org/)
 
 Features:
-- minimalistic design
-- fast speed
+- Minimalistic design
+- Fast speed
+- Porfolio data in JSON static file
+
+<img src="https://raw.githubusercontent.com/vbarkasov/vbarkasov-portfolio-vue/master/static/portfolio/2018-portfolio-site/screen_001.png" alt="Porfolio preview" width="500" />
+<br><br>
+
+Demo: [https://vbarkasov.com](https://vbarkasov.com)
 
 ### Build Setup
 
