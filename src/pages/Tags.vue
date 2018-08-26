@@ -1,5 +1,8 @@
 <template>
   <div class="px-4">
+    <vue-headful
+      :title="pageTitle"
+    />
     <h1>Search results by tag: <span v-for="tag in tags" :key="tag">{{ tag }}</span></h1>
     <div class="portfolio-list card-columns">
       <portfolio-card
@@ -45,6 +48,9 @@ export default {
         tags = tags.split('&');
       }
       return tags;
+    },
+    pageTitle: function() {
+      return this.tags.join(' ') + ' - Portfolio site of Vladimir Barkasov'
     }
   },
   mounted: function(){},

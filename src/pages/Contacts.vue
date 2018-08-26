@@ -1,5 +1,8 @@
 <template>
   <div class="static-content px-4 mx-auto">
+    <vue-headful
+      title="Vladimir Barkasov - Contacts"
+    />
     <h1 class="text-center">Contacts</h1>
     <address>
       <strong>Telegram:</strong>

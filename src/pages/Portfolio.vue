@@ -1,5 +1,8 @@
 <template>
   <div class="portfolio-list card-columns px-4">
+    <vue-headful
+      title="Vladimir Barkasov - Portfolio site of front-end developer"
+    />
     <portfolio-card
       v-for="item in items"
       v-bind:item="item"
@@ -18,7 +21,6 @@ export default {
       title: 'Portfolio'
     }
   },
-  methods: {},
   props: ['items'],
   components: {
     PortfolioCard

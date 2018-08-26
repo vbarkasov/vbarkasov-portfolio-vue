@@ -1,5 +1,8 @@
 <template>
   <div class="static-content px-4 mx-auto">
+    <vue-headful
+      title="Browser Extensions - Portfolio site of Vladimir Barkasov "
+    />
     <div class="text-center">
       <img class="mb-4 img-fluid rounded" src="/static/img/browser-extensions-logo.jpg" alt="browser extension development" />
       <h1>Browser extension development</h1>

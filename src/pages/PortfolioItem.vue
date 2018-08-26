@@ -1,6 +1,9 @@
 <template>
   <div>
     <div class="item-block pb-md-4 mx-auto text-center">
+      <vue-headful
+        :title="pageTitle"
+      />
       <h1>{{ item.title }}</h1>
       <p v-html="item.description"></p>
 
@@ -40,7 +43,6 @@ export default {
   name: 'PortfolioItem',
   data () {
     return {
-      title: 'PortfolioItem',
       slug: ''
     }
   },
@@ -60,6 +62,9 @@ export default {
         }
       }
       return resultItem;
+    },
+    pageTitle: function() {
+      return this.item.title + ' - Portfolio of Vladimir Barkasov'
     }
   },
 

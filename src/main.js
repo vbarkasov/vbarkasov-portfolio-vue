@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import vueHeadful from 'vue-headful'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
@@ -11,6 +12,8 @@ import { faGithub, faGooglePlay } from '@fortawesome/free-brands-svg-icons'
 
 library.add(faGithub, faGooglePlay, faExternalLinkAlt);
 Vue.component('fa-icon', FontAwesomeIcon);
+
+Vue.component('vue-headful', vueHeadful);
 
 Vue.config.productionTip = false;
 
