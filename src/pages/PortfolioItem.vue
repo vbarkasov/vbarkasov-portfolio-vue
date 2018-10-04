@@ -39,7 +39,7 @@
       </swiper>
 
       <div v-else-if="item.images.length === 1" class="mb-4">
-          <img :src="item.images[1]" alt="" class="img-thumbnail item-image"/>
+          <img :src="item.images[0]" alt="" class="img-thumbnail item-image"/>
       </div>
 
       <div>
