@@ -7,12 +7,14 @@
       </div>
     </div>
     <Footer></Footer>
+    <SendMessagePopup></SendMessagePopup>
   </div>
 </template>
 
 <script>
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
+import SendMessagePopup from './components/SendMessagePopup.vue'
 
 export default {
   name: 'App',
@@ -47,7 +49,8 @@ export default {
   },
   components: {
     Header,
-    Footer
+    Footer,
+    SendMessagePopup
   }
 }
 </script>

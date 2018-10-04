@@ -4,7 +4,7 @@
       <h5 class="text-muted">Контакты</h5>
       <ul class="block-list">
         <li class="text-left list-item list-item__left">
-          <EmailBtn></EmailBtn>
+          <a class="vb-icon email hvr-float-shadow" v-on:click.prevent="showPopup" href="">Send email</a>
         </li>
         <li v-for="c in contacts" class="text-left list-item">
           <a :href="c.href" class="vb-icon hvr-float-shadow" target="_blank" :title="c.title" :class="c.iconClass"></a>
@@ -25,8 +25,6 @@
 </template>
 
 <script>
-import EmailBtn from './EmailBtn.vue'
-
 export default {
   name: 'Footer',
   data () {
@@ -67,8 +65,10 @@ export default {
       ]
     }
   },
-  components: {
-    EmailBtn
+  methods: {
+    showPopup() {
+      this.$store.dispatch('setEmailPopupVisibilityStatus', true)
+    }
   }
 }
 </script>

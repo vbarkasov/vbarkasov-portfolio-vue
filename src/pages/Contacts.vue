@@ -16,7 +16,7 @@
 
     <address>
       <strong>Email:</strong>
-      <a href="">vbarkasov4pub@gmail.com</a>
+      <a v-on:click.prevent="showPopup" href="">vbarkasov4pub@gmail.com</a>
     </address>
   </div>
 </template>
@@ -27,6 +27,11 @@ export default {
   data () {
     return {
       title: 'Contacts',
+    }
+  },
+  methods: {
+    showPopup() {
+      this.$store.dispatch('setEmailPopupVisibilityStatus', true)
     }
   }
 }

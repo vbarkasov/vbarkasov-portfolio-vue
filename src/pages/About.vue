@@ -10,7 +10,6 @@
 
     <p>
       <strong>Hello!</strong><br/>
-      Nice to meet you!<br/>
       I’m a professional front-end developer<br/>
       You can see a source code of my projects in <a href="https://github.com/vbarkasov" target="_blank">Github</a>
     </p>

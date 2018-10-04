@@ -28,9 +28,20 @@
           {{ tag }}
         </router-link>
       </div>
-      <div v-for="image in item.images" class="mb-4">
-        <img :src="image" alt="" class="img-thumbnail item-image"/>
+
+      <swiper :options="swiperOption" v-if="item.images.length > 1">
+        <swiper-slide v-for="(image, index) in item.images" :key="`fruit-${index}`" class="mb-4">
+          <img :src="image" alt="" class="img-thumbnail item-image"/>
+        </swiper-slide>
+        <div class="swiper-pagination" slot="pagination"></div>
+        <div class="swiper-button-prev" slot="button-prev"></div>
+        <div class="swiper-button-next" slot="button-next"></div>
+      </swiper>
+
+      <div v-else-if="item.images.length === 1" class="mb-4">
+          <img :src="item.images[1]" alt="" class="img-thumbnail item-image"/>
       </div>
+
       <div>
         <small class="text-muted">{{ item.timeText }}</small>
       </div>
@@ -43,7 +54,24 @@ export default {
   name: 'PortfolioItem',
   data () {
     return {
-      slug: ''
+      slug: '',
+      swiperOption: {
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        },
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false
+        },
+        loop: true,
+        slidesPerView: 1,
+        spaceBetween: 30,
+      }
     }
   },
   props: ['items'],
