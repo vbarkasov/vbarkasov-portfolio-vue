@@ -1,40 +1,42 @@
 <template>
-  <div id="sendmail-popup" class="modal" v-bind:class="{'showed' : emailPopupIsShown }" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h2 class="modal-title">Send message</h2>
-          <button v-on:click.prevent="hidePopup" type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form class="sendmail-form" name="sendmail-form">
-            <div class="form-group">
-              <label for="user-message">Your message *</label>
-              <textarea v-model="message" class="form-control" id="user-message" rows="3" required></textarea>
-            </div>
-            <div class="form-group">
-              <label for="user-email">Your email for answer *</label>
-              <input v-model="email" type="email" class="form-control" id="user-email" placeholder="name@example.com" required>
-            </div>
-            <div class="form-group">
-              <label for="user-name">Your name</label>
-              <input v-model="name"  type="text" class="form-control" id="user-name" placeholder="Name">
-            </div>
-            <div class="g-recaptcha" data-sitekey="6LcUkV0UAAAAADuwEqgKLHC5P3lQ1KKx5OiMGXRP"></div>
-          </form>
-          <div v-if="userMessage" :class="['alert-' + userMessageType]" class="mb-0 mt-3 alert">
-            {{ userMessage }}
+  <transition name="fade">
+    <div id="sendmail-popup" class="modal" v-if="emailPopupIsShown" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title">Send message</h2>
+            <button v-on:click.prevent="hidePopup" type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
           </div>
-        </div>
-        <div class="modal-footer">
-          <button v-on:click.prevent="sendMail" type="submit" class="btn btn-primary">Send</button>
-          <button v-on:click.prevent="popupIsVisible = false" type="button" class="btn btn-secondary">Cancel</button>
+          <div class="modal-body">
+            <form class="sendmail-form" name="sendmail-form">
+              <div class="form-group">
+                <label for="user-message">Your message *</label>
+                <textarea v-model="message" class="form-control" id="user-message" rows="3" required></textarea>
+              </div>
+              <div class="form-group">
+                <label for="user-email">Your email for answer *</label>
+                <input v-model="email" type="email" class="form-control" id="user-email" placeholder="name@example.com" required>
+              </div>
+              <div class="form-group">
+                <label for="user-name">Your name</label>
+                <input v-model="name"  type="text" class="form-control" id="user-name" placeholder="Name">
+              </div>
+              <div class="g-recaptcha" data-sitekey="6LcUkV0UAAAAADuwEqgKLHC5P3lQ1KKx5OiMGXRP"></div>
+            </form>
+            <div v-if="userMessage" :class="['alert-' + userMessageType]" class="mb-0 mt-3 alert">
+              {{ userMessage }}
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button v-on:click.prevent="sendMail" type="submit" class="btn btn-primary">Send</button>
+            <button v-on:click.prevent="popupIsVisible = false" type="button" class="btn btn-secondary">Cancel</button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </transition>
 </template>
 
 <script>
@@ -42,7 +44,6 @@ export default {
   name: 'SendMessagePopup',
   data () {
     return {
-      popupIsVisible: false,
       userMessage: '',
       userMessageType: '',
       message: '',
@@ -99,7 +100,7 @@ export default {
 </script>
 
 <style scoped>
-  .modal.showed {
+  .modal {
     display: block;
   }
 </style>
