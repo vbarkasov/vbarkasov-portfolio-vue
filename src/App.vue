@@ -3,7 +3,9 @@
     <Header></Header>
     <div class="row mb-3 content-container">
       <div class="col-12">
-        <router-view v-bind:items="items"/>
+        <transition name="fade" mode="out-in">
+          <router-view v-bind:items="items"/>
+        </transition>
       </div>
     </div>
     <Footer></Footer>
@@ -63,5 +65,12 @@ export default {
 
   .card {
     border: 1px solid rgba(0,0,0,.3)
+  }
+
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+  }
+  .fade-enter, .fade-leave-to {
+    opacity: 0;
   }
 </style>
