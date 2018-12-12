@@ -176,7 +176,44 @@
       ]
     },
     {
-      "id": "008",
+      "id": "009",
+      "slug": "child-products-statistics",
+      "title": "Statistics website on children's goods",
+      "description": "The website with statistical data on children's goods with graphs",
+      "features": [
+        "beautiful graphs",
+        "interactive",
+        "adaptive view",
+        "minimalistic design"
+      ],
+      "timeText": "October 2018",
+      "previewImage": "/static/portfolio/2018-child-products/screen_preview.png",
+      "images": [
+        "/static/portfolio/2018-child-products/screen01.png",
+        "/static/portfolio/2018-child-products/screen02.png",
+        "/static/portfolio/2018-child-products/screen03.png",
+        "/static/portfolio/2018-child-products/screen04.png",
+        "/static/portfolio/2018-child-products/screen05.png",
+        "/static/portfolio/2018-child-products/screen06.png"
+      ],
+      "tags": [
+        "vue",
+        "vuex",
+        "vuetify",
+        "javascript",
+        "html",
+        "css"
+      ],
+      "links": [
+        {
+          "title": "Demo",
+          "href": "http://childproducts.vbarkasov.com/#/research-result",
+          "icon": ["fas", "fa-external-link-alt"]
+        }
+      ]
+    },
+    {
+      "id": "009",
       "slug": "vbarkasov-portfolio-site",
       "title": "Portfolio site",
       "description": "The portfolio site of web developer",
