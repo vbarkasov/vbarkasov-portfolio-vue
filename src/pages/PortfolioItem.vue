@@ -121,4 +121,20 @@ export default {
   .features-list {
     display: inline-block;
   }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    top: 0;
+    width: 40%;
+    height: 100%;
+    margin-top: 0;
+  }
+
+  .swiper-button-prev {
+    background-position: left;
+  }
+
+  .swiper-button-next {
+    background-position: right;
+  }
 </style>
