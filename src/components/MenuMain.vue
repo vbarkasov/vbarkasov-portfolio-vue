@@ -23,6 +23,10 @@ export default {
           'href': '/'
         },
         {
+          'title': 'Front-end with Vue.js',
+          'href': '/page/front-end-vue'
+        },
+        {
           'title': 'Browser Extensions',
           'href': '/page/browser-extensions-development'
         },

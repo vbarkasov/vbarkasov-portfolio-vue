@@ -178,8 +178,8 @@
     {
       "id": "009",
       "slug": "child-products-statistics",
-      "title": "Statistics website on children's goods",
-      "description": "The website with statistical data on children's goods with graphs",
+      "title": "Statistics website of children's goods",
+      "description": "The website with statistical data of children's goods with graphs",
       "features": [
         "beautiful graphs",
         "interactive",
@@ -189,12 +189,9 @@
       "timeText": "October 2018",
       "previewImage": "/static/portfolio/2018-child-products/screen_preview.png",
       "images": [
-        "/static/portfolio/2018-child-products/screen01.png",
-        "/static/portfolio/2018-child-products/screen02.png",
-        "/static/portfolio/2018-child-products/screen03.png",
-        "/static/portfolio/2018-child-products/screen04.png",
-        "/static/portfolio/2018-child-products/screen05.png",
-        "/static/portfolio/2018-child-products/screen06.png"
+        "/static/portfolio/2018-child-products/screen_001.png",
+        "/static/portfolio/2018-child-products/screen_002.png",
+        "/static/portfolio/2018-child-products/screen_003.png"
       ],
       "tags": [
         "vue",

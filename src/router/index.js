@@ -6,6 +6,7 @@ import Tags from '@/pages/Tags'
 import About from '@/pages/About'
 import Contacts from '@/pages/Contacts'
 import Extensions from '@/pages/Extensions'
+import Frontend from '@/pages/Frontend'
 
 Vue.use(Router);
 
@@ -41,6 +42,11 @@ export default new Router({
       path: '/page/browser-extensions-development',
       name: 'Extensions',
       component: Extensions
+    },
+    {
+      path: '/page/front-end-vue',
+      name: 'Frontend',
+      component: Frontend
     }/*,
     {
       path: '*',
