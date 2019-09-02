@@ -31,7 +31,7 @@
           </div>
           <div class="modal-footer">
             <button v-on:click.prevent="sendMail" type="submit" class="btn btn-primary">Send</button>
-            <button v-on:click.prevent="popupIsVisible = false" type="button" class="btn btn-secondary">Cancel</button>
+            <button v-on:click.prevent="emailPopupIsShown = false" type="button" class="btn btn-secondary">Cancel</button>
           </div>
         </div>
       </div>
@@ -66,28 +66,42 @@ export default {
     sendMail: function() {
       const self = this;
 
-      $.ajax({
-        type:'POST',
-        url:'/sendmail.php',
-        dataType: 'json',
-        data: {
+      let recaptchaResponse = document.getElementById('g-recaptcha-response')
+        ? document.getElementById('g-recaptcha-response').value
+        : '';
+
+      fetch('/sendmail.php', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
           name: self.name,
           email: self.email,
           message: self.message,
-          'g-recaptcha-response': document.getElementById('g-recaptcha-response').value
-        }
-      }).done(function(data, textStatus, jqXHR) {
-        self.userMessage = 'The message is sent successfully';
-        self.userMessageType = 'success';
-      }).fail(function(jqXHR, textStatus, errorThrown ) {
-        self.userMessage = 'The message is not delivered';
-        self.userMessageType = 'danger';
-      });
+          'g-recaptcha-response': recaptchaResponse
+        })
+      })
+        .then(response => response.json())
+        .then(data => {
+          self.userMessage = 'The message is sent successfully';
+          self.userMessageType = 'success';
+        })
+        .catch(error => {
+          self.userMessage = 'The message is not delivered';
+          self.userMessageType = 'danger';
+        });
     }
   },
   computed: {
-    emailPopupIsShown: function () {
-      return this.$store.getters.emailPopupVisibilityStatus
+    emailPopupIsShown: {
+      set (val) {
+        this.$store.dispatch('setEmailPopupVisibilityStatus', val)
+      },
+      get () {
+        return this.$store.getters.emailPopupVisibilityStatus
+      }
     }
   },
   mounted() {

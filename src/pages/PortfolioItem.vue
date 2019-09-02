@@ -29,7 +29,7 @@
         </router-link>
       </div>
 
-      <swiper :options="swiperOption" v-if="item.images.length > 1">
+      <swiper :options="swiperOption" v-if="hasMore1images(item)">
         <swiper-slide v-for="(image, index) in item.images" :key="`fruit-${index}`" class="mb-4">
           <img :src="image" alt="" class="img-thumbnail item-image"/>
         </swiper-slide>
@@ -38,7 +38,7 @@
         <div class="swiper-button-next" slot="button-next"></div>
       </swiper>
 
-      <div v-else-if="item.images.length === 1" class="mb-4">
+      <div v-else-if="hasExact1image(item)" class="mb-4">
           <img :src="item.images[0]" alt="" class="img-thumbnail item-image"/>
       </div>
 
@@ -76,7 +76,7 @@ export default {
   },
   props: ['items'],
   computed: {
-    item: function() {
+    item () {
       let items = this.items;
       let resultItem = {
         slug: '',
@@ -91,17 +91,28 @@ export default {
       }
       return resultItem;
     },
-    pageTitle: function() {
+    pageTitle () {
       return this.item.title + ' - Portfolio of Vladimir Barkasov'
     }
   },
 
   mounted: function(){
     this.slug = this.$route.params.itemSlug;
-    console.log('mounted');
-    console.log(this.slug);
   },
-  methods: {}
+  methods: {
+    hasMore1images (item) {
+      return item
+        && item.images
+        && item.images.hasOwnProperty('length')
+        && item.images.length > 1
+    },
+    hasExact1image (item) {
+      return item
+        && item.images
+        && item.images.hasOwnProperty('length')
+        && item.images.length === 1
+    }
+  }
 }
 </script>
 

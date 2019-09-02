@@ -28,26 +28,25 @@ export default {
   },
   mounted: function () {
     const self = this;
-    $.ajax({
-      url: '/static/portfolio/data.json',
-      dataType: 'json'
-    }).done(function(data) {
-      const sortedItems = data.items.sort((a, b) => {
+
+    fetch('/static/portfolio/data.json')
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(data) {
+        const sortedItems = data.items.sort((a, b) => {
           // sort by time (newest in up)
-          if(new Date(a.timeText) > new Date(b.timeText)) {
+          if (new Date(a.timeText) > new Date(b.timeText)) {
             return -1;
           }
-          if(new Date(a.timeText) < new Date(b.timeText)) {
+          if (new Date(a.timeText) < new Date(b.timeText)) {
             return 1;
           }
           return 0
-      });
+        });
 
-      self.items = Object.assign([], self.items, sortedItems);
-    }).fail(function(jqXHR, textStatus) {
-      console.log(jqXHR);
-      console.log(textStatus);
-    });
+        self.items = Object.assign([], self.items, sortedItems);
+      });
   },
   components: {
     Header,
