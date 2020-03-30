@@ -23,14 +23,14 @@
 
 <script>
 export default {
-  name: 'Contacts',
+  'name': 'Contacts',
   data () {
     return {
-      title: 'Contacts',
+      'title': 'Contacts'
     }
   },
-  methods: {
-    showPopup() {
+  'methods': {
+    showPopup () {
       this.$store.dispatch('setEmailPopupVisibilityStatus', true)
     }
   }

@@ -10,7 +10,7 @@
             </button>
           </div>
           <div class="modal-body">
-            <form class="sendmail-form" name="sendmail-form">
+            <form class="sendmail-form" name="sendmail-form" method="POST">
               <div class="form-group">
                 <label for="user-message">Your message *</label>
                 <textarea v-model="message" class="form-control" id="user-message" rows="3" required></textarea>
@@ -23,7 +23,7 @@
                 <label for="user-name">Your name</label>
                 <input v-model="name"  type="text" class="form-control" id="user-name" placeholder="Name">
               </div>
-              <div class="g-recaptcha" data-sitekey="6LcUkV0UAAAAADuwEqgKLHC5P3lQ1KKx5OiMGXRP"></div>
+              <vue-recaptcha :sitekey="gRecaptchaSitekey"></vue-recaptcha>
             </form>
             <div v-if="userMessage" :class="['alert-' + userMessageType]" class="mb-0 mt-3 alert">
               {{ userMessage }}
@@ -40,62 +40,71 @@
 </template>
 
 <script>
+import VueRecaptcha from 'vue-recaptcha'
+import gRecaptchaSitekey from '../config'
+
 export default {
-  name: 'SendMessagePopup',
+  'name': 'SendMessagePopup',
+  'components': {
+    VueRecaptcha
+  },
   data () {
     return {
-      userMessage: '',
-      userMessageType: '',
-      message: '',
-      email: '',
-      name: ''
+      'userMessage': '',
+      'userMessageType': '',
+      'message': '',
+      'email': '',
+      'name': '',
+      'gRecaptchaSitekey': gRecaptchaSitekey
     }
   },
-  methods: {
-    showPopup: function(e) {
-      e.preventDefault();
-      this.userMessage = '';
-      this.userMessageType = '';
+  'methods': {
+    'showPopup': function (e) {
+      e.preventDefault()
+      this.userMessage = ''
+      this.userMessageType = ''
       this.$store.dispatch('setEmailPopupVisibilityStatus', true)
     },
-    hidePopup: function() {
-      this.userMessage = '';
-      this.userMessageType = '';
+    'hidePopup': function () {
+      this.userMessage = ''
+      this.userMessageType = ''
       this.$store.dispatch('setEmailPopupVisibilityStatus', false)
     },
-    sendMail: function() {
-      const self = this;
+    'sendMail': function () {
+      const self = this
 
-      let recaptchaResponse = document.getElementById('g-recaptcha-response')
+      const recaptchaResponse = document.getElementById('g-recaptcha-response')
         ? document.getElementById('g-recaptcha-response').value
-        : '';
+        : ''
+      // console.log('this.$refs.recaptcha');
+      // console.log(this.$refs.recaptcha);
 
       fetch('/sendmail.php', {
-        method: 'POST',
-        headers: {
+        'method': 'POST',
+        'headers': {
           'Accept': 'application/json',
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({
-          name: self.name,
-          email: self.email,
-          message: self.message,
+        'body': JSON.stringify({
+          'name': self.name,
+          'email': self.email,
+          'message': self.message,
           'g-recaptcha-response': recaptchaResponse
         })
       })
         .then(response => response.json())
-        .then(data => {
-          self.userMessage = 'The message is sent successfully';
-          self.userMessageType = 'success';
+        .then(() => {
+          self.userMessage = 'The message is sent successfully'
+          self.userMessageType = 'success'
         })
-        .catch(error => {
-          self.userMessage = 'The message is not delivered';
-          self.userMessageType = 'danger';
-        });
+        .catch(() => {
+          self.userMessage = 'The message is not delivered'
+          self.userMessageType = 'danger'
+        })
     }
   },
-  computed: {
-    emailPopupIsShown: {
+  'computed': {
+    'emailPopupIsShown': {
       set (val) {
         this.$store.dispatch('setEmailPopupVisibilityStatus', val)
       },
@@ -104,12 +113,20 @@ export default {
       }
     }
   },
-  mounted() {
-    let recaptchaScript = document.createElement('script');
-    recaptchaScript.src = 'https://www.google.com/recaptcha/api.js';
-    recaptchaScript.async = true;
-    document.head.appendChild(recaptchaScript);
-  },
+  mounted () {
+    const self = this
+    const recaptchaScript = document.createElement('script')
+    recaptchaScript.src = 'https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit'
+    recaptchaScript.async = true
+    recaptchaScript.defer = true
+    document.head.appendChild(recaptchaScript)
+
+    window.onloadCallback = function () {
+      window.grecaptcha && window.grecaptcha.render('captcha', {
+        'sitekey': self.gRecaptchaSitekey
+      })
+    }
+  }
 }
 </script>
 

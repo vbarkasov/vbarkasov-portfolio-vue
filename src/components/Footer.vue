@@ -6,7 +6,7 @@
         <li class="text-left list-item list-item__left">
           <a class="vb-icon email hvr-float-shadow" v-on:click.prevent="showPopup" href="">Send email</a>
         </li>
-        <li v-for="c in contacts" class="text-left list-item">
+        <li v-for="(c, index) in contacts" :key="'contact_' + index" class="text-left list-item">
           <a :href="c.href" class="vb-icon hvr-float-shadow" target="_blank" :title="c.title" :class="c.iconClass"></a>
         </li>
       </ul>
@@ -15,7 +15,7 @@
       <div class="float-right">
         <h5 class="text-muted">Способы оплаты</h5>
         <ul class="block-list">
-          <li v-for="pm in paymentMethods" class="text-left list-item list-item__right">
+          <li v-for="(pm, index) in paymentMethods" :key="'payment_' + index" class="text-left list-item list-item__right">
             <a :href="pm.href" class="vb-icon hvr-float-shadow" target="_blank" :title="pm.title" :class="pm.iconClass"></a>
           </li>
         </ul>
@@ -26,47 +26,47 @@
 
 <script>
 export default {
-  name: 'Footer',
+  'name': 'Footer',
   data () {
     return {
-      paymentMethods: [
+      'paymentMethods': [
         {
-          "title": "Qiwi",
-          "href": "https://qiwi.com/",
-          "iconClass": "qiwi"
+          'title': 'Qiwi',
+          'href': 'https://qiwi.com/',
+          'iconClass': 'qiwi'
         }, {
-          "title": "Яндекс Деньги",
-          "href": "https://money.yandex.ru/",
-          "iconClass": "yandex-money"
+          'title': 'Яндекс Деньги',
+          'href': 'https://money.yandex.ru/',
+          'iconClass': 'yandex-money'
         }, {
-          "title": "Bitcoin",
-          "href": "https://bitcoin.org/en/",
-          "iconClass": "bitcoin"
+          'title': 'Bitcoin',
+          'href': 'https://bitcoin.org/en/',
+          'iconClass': 'bitcoin'
         }, {
-          "title": "PayPal",
-          "href": "https://www.paypal.com/",
-          "iconClass": "paypal"
+          'title': 'PayPal',
+          'href': 'https://www.paypal.com/',
+          'iconClass': 'paypal'
         }, {
-          "title": "MasterCard",
-          "href": "https://www.mastercard.com/",
-          "iconClass": "mastercard"
+          'title': 'MasterCard',
+          'href': 'https://www.mastercard.com/',
+          'iconClass': 'mastercard'
         }
       ],
-      contacts: [
-        /*{
-          "title": "Email",
-          "href": "mailto:vbarkasov4dev@gmail.com",
-          "iconClass": "email"
-        },*/{
-          "title": "Telegram",
-          "href": "tg://resolve?domain=vbarkasov",
-          "iconClass": "telegram"
+      'contacts': [
+        /* {
+          'title': 'Email',
+          'href': 'mailto:vbarkasov4dev@gmail.com',
+          'iconClass': 'email'
+        }, */{
+          'title': 'Telegram',
+          'href': 'tg://resolve?domain=vbarkasov',
+          'iconClass': 'telegram'
         }
       ]
     }
   },
-  methods: {
-    showPopup() {
+  'methods': {
+    showPopup () {
       this.$store.dispatch('setEmailPopupVisibilityStatus', true)
     }
   }

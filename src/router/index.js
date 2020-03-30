@@ -8,49 +8,49 @@ import Contacts from '@/pages/Contacts'
 import Extensions from '@/pages/Extensions'
 import Frontend from '@/pages/Frontend'
 
-Vue.use(Router);
+Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
-  routes: [
+  'mode': 'history',
+  'routes': [
     {
-      path: '/',
-      name: 'Portfolio',
-      component: Portfolio
+      'path': '/',
+      'name': 'Portfolio',
+      'component': Portfolio
     },
     {
-      path: '/portfolio/:itemSlug',
-      name: 'PortfolioItem',
-      component: PortfolioItem
+      'path': '/portfolio/:itemSlug',
+      'name': 'PortfolioItem',
+      'component': PortfolioItem
     },
     {
-      path: '/tags/:tags',
-      name: 'Tags',
-      component: Tags
+      'path': '/tags/:tags',
+      'name': 'Tags',
+      'component': Tags
     },
     {
-      path: '/page/about',
-      name: 'About',
-      component: About
+      'path': '/page/about',
+      'name': 'About',
+      'component': About
     },
     {
-      path: '/page/contacts',
-      name: 'Contacts',
-      component: Contacts
+      'path': '/page/contacts',
+      'name': 'Contacts',
+      'component': Contacts
     },
     {
-      path: '/page/browser-extensions-development',
-      name: 'Extensions',
-      component: Extensions
+      'path': '/page/browser-extensions-development',
+      'name': 'Extensions',
+      'component': Extensions
     },
     {
-      path: '/page/front-end-vue',
-      name: 'Frontend',
-      component: Frontend
+      'path': '/page/front-end-vue',
+      'name': 'Frontend',
+      'component': Frontend
     }/*,
     {
       path: '*',
       component: NotFoundComponent
-    }*/
+    } */
   ]
 })

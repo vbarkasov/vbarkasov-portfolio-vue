@@ -15,14 +15,14 @@
 import PortfolioCard from '../components/PortfolioCard.vue'
 
 export default {
-  name: 'Portfolio',
+  'name': 'Portfolio',
   data () {
     return {
-      title: 'Portfolio'
+      'title': 'Portfolio'
     }
   },
-  props: ['items'],
-  components: {
+  'props': ['items'],
+  'components': {
     PortfolioCard
   }
 }

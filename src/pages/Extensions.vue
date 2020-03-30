@@ -54,10 +54,10 @@
 
 <script>
 export default {
-  name: 'Extensions',
+  'name': 'Extensions',
   data () {
     return {
-      title: 'Browser extensions development',
+      'title': 'Browser extensions development'
     }
   }
 }

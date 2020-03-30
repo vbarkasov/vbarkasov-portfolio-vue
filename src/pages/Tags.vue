@@ -18,46 +18,46 @@
 import PortfolioCard from '../components/PortfolioCard.vue'
 
 export default {
-  name: 'Tags',
+  'name': 'Tags',
   data () {
     return {
-      title: 'Tags'
+      'title': 'Tags'
     }
   },
-  props: ['items'],
-  computed: {
-    results: function() {
-      let results = new Set();
+  'props': ['items'],
+  'computed': {
+    'results': function () {
+      const results = new Set()
 
-      if(this.items.length === 0 || this.tags.length === 0) {
-        return;
+      if (this.items.length === 0 || this.tags.length === 0) {
+        return
       }
 
-      for(let ti=0, tlen=this.tags.length; ti<tlen; ti++) {
-        for(let ii=0, ilen=this.items.length; ii<ilen; ii++) {
-          if(this.items[ii].tags.indexOf(this.tags[ti]) !== -1) {
-            results.add(this.items[ii]);
+      for (let ti = 0, tlen = this.tags.length; ti < tlen; ti++) {
+        for (let ii = 0, ilen = this.items.length; ii < ilen; ii++) {
+          if (this.items[ii].tags.indexOf(this.tags[ti]) !== -1) {
+            results.add(this.items[ii])
           }
         }
       }
-      return Array.from(results);
+      return Array.from(results)
     },
-    tags: function(){
-      let tags = decodeURIComponent(this.$route.params.tags);
-      if(!!tags) {
-        tags = tags.split('&');
+    'tags': function () {
+      let tags = decodeURIComponent(this.$route.params.tags)
+      if (tags) {
+        tags = tags.split('&')
       }
-      return tags;
+      return tags
     },
-    pageTitle: function() {
+    'pageTitle': function () {
       return this.tags.join(' ') + ' - Portfolio site of Vladimir Barkasov'
     }
   },
-  mounted: function(){},
-  components: {
+  'mounted': function () {},
+  'components': {
     PortfolioCard
   },
-  methods: {}
+  'methods': {}
 }
 </script>
 

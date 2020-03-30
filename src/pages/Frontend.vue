@@ -41,30 +41,30 @@
 import PortfolioCard from '../components/PortfolioCard.vue'
 
 export default {
-  name: 'Frontend',
-  props: ['items'],
-  components: {
+  'name': 'Frontend',
+  'props': ['items'],
+  'components': {
     PortfolioCard
   },
   data () {
     return {
-      title: 'Front-end with a Vue.js',
+      'title': 'Front-end with a Vue.js'
     }
   },
-  computed: {
-    results: function() {
-      let results = [];
+  'computed': {
+    'results': function () {
+      const results = []
 
-      if(this.items.length === 0) {
-        return results;
+      if (this.items.length === 0) {
+        return results
       }
 
-      for(let i=0, len=this.items.length; i<len; i++) {
-        if(this.items[i].tags.indexOf('vue') !== -1) {
-          results.push(this.items[i]);
+      for (let i = 0, len = this.items.length; i < len; i++) {
+        if (this.items[i].tags.indexOf('vue') !== -1) {
+          results.push(this.items[i])
         }
       }
-      return results;
+      return results
     }
   }
 }

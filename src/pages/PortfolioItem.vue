@@ -8,10 +8,18 @@
       <p v-html="item.description"></p>
 
       <ul class="features-list">
-        <li v-for="feature in item.features" class="text-left">{{ feature }}</li>
+        <li v-for="(feature, index) in item.features"
+            :key="'feature_' + index"
+            class="text-left">
+          {{ feature }}
+        </li>
       </ul>
 
-      <div v-for="link in item.links" class="mb-3">
+      <div
+        v-for="(link, index) in item.links"
+        :key="'link_' + index"
+        class="mb-3"
+      >
         <a :href="link.href" target="_blank" class="btn btn-secondary">
           <fa-icon :icon="link.icon" />
           {{ link.title }}
@@ -51,66 +59,68 @@
 
 <script>
 export default {
-  name: 'PortfolioItem',
+  'name': 'PortfolioItem',
   data () {
     return {
-      slug: '',
-      swiperOption: {
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true
+      'slug': '',
+      'swiperOption': {
+        'pagination': {
+          'el': '.swiper-pagination',
+          'clickable': true
         },
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev'
+        'navigation': {
+          'nextEl': '.swiper-button-next',
+          'prevEl': '.swiper-button-prev'
         },
-        autoplay: {
-          delay: 2500,
-          disableOnInteraction: false
+        'autoplay': {
+          'delay': 2500,
+          'disableOnInteraction': false
         },
-        loop: true,
-        slidesPerView: 1,
-        spaceBetween: 30,
+        'loop': true,
+        'slidesPerView': 1,
+        'spaceBetween': 30
       }
     }
   },
-  props: ['items'],
-  computed: {
+  'props': ['items'],
+  'computed': {
     item () {
-      let items = this.items;
+      const items = this.items
       let resultItem = {
-        slug: '',
-        title: ''
-      };
+        'slug': '',
+        'title': ''
+      }
 
-      for(let i in items) if(items.hasOwnProperty(i)) {
-        if(items[i].slug === this.slug) {
-          resultItem = items[i];
-          break;
+      for (const i in items) {
+        if (Object.prototype.hasOwnProperty.call(items, i)) {
+          if (items[i].slug === this.slug) {
+            resultItem = items[i]
+            break
+          }
         }
       }
-      return resultItem;
+      return resultItem
     },
     pageTitle () {
       return this.item.title + ' - Portfolio of Vladimir Barkasov'
     }
   },
 
-  mounted: function(){
-    this.slug = this.$route.params.itemSlug;
+  'mounted': function () {
+    this.slug = this.$route.params.itemSlug
   },
-  methods: {
+  'methods': {
     hasMore1images (item) {
-      return item
-        && item.images
-        && item.images.hasOwnProperty('length')
-        && item.images.length > 1
+      return item &&
+        item.images &&
+        Object.prototype.hasOwnProperty.call(item.images, 'length') &&
+        item.images.length > 1
     },
     hasExact1image (item) {
-      return item
-        && item.images
-        && item.images.hasOwnProperty('length')
-        && item.images.length === 1
+      return item &&
+        item.images &&
+        Object.prototype.hasOwnProperty.call(item.images, 'length') &&
+        item.images.length === 1
     }
   }
 }

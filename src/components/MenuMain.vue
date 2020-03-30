@@ -14,10 +14,10 @@
 
 <script>
 export default {
-  name: 'MenuMain',
+  'name': 'MenuMain',
   data () {
     return {
-      menuItems: [
+      'menuItems': [
         {
           'title': 'Portfolio',
           'href': '/'
@@ -41,9 +41,9 @@ export default {
       ]
     }
   },
-  methods: {
-    scrollToTop: function() {
-      window.scrollTo(0,0)
+  'methods': {
+    'scrollToTop': function () {
+      window.scrollTo(0, 0)
     }
   }
 }

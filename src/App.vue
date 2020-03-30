@@ -19,36 +19,36 @@ import Footer from './components/Footer.vue'
 import SendMessagePopup from './components/SendMessagePopup.vue'
 
 export default {
-  name: 'App',
+  'name': 'App',
   data () {
     return {
-      title: 'Vladimir Barkasov - Portfolio',
-      items: []
+      'title': 'Vladimir Barkasov - Portfolio',
+      'items': []
     }
   },
-  mounted: function () {
-    const self = this;
+  'mounted': function () {
+    const self = this
 
     fetch('/static/portfolio/data.json')
-      .then(function(response) {
-        return response.json();
+      .then(function (response) {
+        return response.json()
       })
-      .then(function(data) {
+      .then(function (data) {
         const sortedItems = data.items.sort((a, b) => {
           // sort by time (newest in up)
           if (new Date(a.timeText) > new Date(b.timeText)) {
-            return -1;
+            return -1
           }
           if (new Date(a.timeText) < new Date(b.timeText)) {
-            return 1;
+            return 1
           }
           return 0
-        });
+        })
 
-        self.items = Object.assign([], self.items, sortedItems);
-      });
+        self.items = Object.assign([], self.items, sortedItems)
+      })
   },
-  components: {
+  'components': {
     Header,
     Footer,
     SendMessagePopup
