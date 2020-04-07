@@ -243,6 +243,32 @@
           "icon": ["fab", "github"]
         }
       ]
+    },
+    {
+      "id": "011",
+      "slug": "infinity-resources",
+      "title": "Infinity Resources - Workforce management platform",
+      "description": "Tasks included adding new features and fixing bugs.",
+      "features": [
+        "interactive",
+        "adaptive",
+        "minimalistic design"
+      ],
+      "timeText": "2019",
+      "previewImage": "/static/portfolio/2019-infinity-resources/screen_preview.jpg",
+      "images": [
+        "/static/portfolio/2019-infinity-resources/screen_001.png",
+        "/static/portfolio/2019-infinity-resources/screen_002.png",
+        "/static/portfolio/2019-infinity-resources/screen_003.png",
+        "/static/portfolio/2019-infinity-resources/screen_004.png"
+      ],
+      "tags": [
+        "vue",
+        "vuex",
+        "javascript",
+        "html",
+        "css"
+      ]
     }
   ]
 }
