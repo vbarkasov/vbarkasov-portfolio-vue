@@ -7,7 +7,7 @@ Features:
 - Fast speed
 - Porfolio data in JSON static file
 
-<img src="https://raw.githubusercontent.com/vbarkasov/vbarkasov-portfolio-vue/master/static/portfolio/2018-portfolio-site/screen_001.png" alt="Porfolio preview" width="500" />
+![Portfolio site screenshot](https://github.com/vbarkasov/vbarkasov-portfolio-vue/blob/master/public/static/portfolio/2018-portfolio-site/screen_001.png?raw=true)
 <br><br>
 
 Demo: [https://vbarkasov.com](https://vbarkasov.com)
