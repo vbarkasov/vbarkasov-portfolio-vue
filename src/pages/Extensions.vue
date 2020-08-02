@@ -11,7 +11,7 @@
       Do you want to simplify your actions in browser or add specific functionality in browser?<br/>
       I can help you ;)<br/>
       I can create extension for popular browsers (Google Chrome, Mozilla Firefox, Opera, Yandex Browser, <br/>
-      I develop extensions for more than 5 years, and I know how to do them effectively.
+      I develop extensions for more than 8 years, and I know how to do them effectively.
     </p>
 
     <p>Types of browser extensions:</p>
@@ -49,15 +49,50 @@
         </p>
       </li>
     </ul>
+    <div class="portfolio-list card-columns mt-5">
+      <portfolio-card
+        v-for="result in results"
+        v-bind:item="result"
+        v-bind:key="result.id"
+      ></portfolio-card>
+    </div>
   </div>
 </template>
 
 <script>
+import PortfolioCard from '../components/PortfolioCard.vue'
+
 export default {
   'name': 'Extensions',
+  'components': {
+    PortfolioCard
+  },
   data () {
     return {
       'title': 'Browser extensions development'
+    }
+  },
+  'props': ['items'],
+  'computed': {
+    'results': function () {
+      const results = new Set()
+      const tags = [
+        'extension',
+        'addon'
+      ]
+
+      if (this.items.length === 0) {
+        return
+      }
+
+      for (let ti = 0, tlen = tags.length; ti < tlen; ti++) {
+        for (let ii = 0, ilen = this.items.length; ii < ilen; ii++) {
+          if (this.items[ii].tags.indexOf(tags[ti]) !== -1) {
+            results.add(this.items[ii])
+          }
+        }
+      }
+      return Array.from(results)
     }
   }
 }
