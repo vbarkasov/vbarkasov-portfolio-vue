@@ -308,6 +308,36 @@
         "screen",
         "screenshot"
       ]
+    },
+    {
+      "id": "013",
+      "slug": "cashback-browser-extension",
+      "title": "Cashback extension for browsers",
+      "description": "Cashback service that helps you make profitable purchases on the Internet",
+      "features": [
+        "creates cashback on affilate sites",
+        "shows coupons on affiliate pages",
+        "shows push-notifications",
+        "shows popup with list of affiliate sites",
+        "authorization"
+      ],
+      "timeText": "2019",
+      "previewImage": "/static/portfolio/2019-cashback-extension/screen_preview.jpg",
+      "images": [
+        "/static/portfolio/2019-cashback-extension/screen_001.png",
+        "/static/portfolio/2019-cashback-extension/screen_002.png",
+        "/static/portfolio/2019-cashback-extension/screen_003.png"
+      ],
+      "tags": [
+        "cashback",
+        "chrome",
+        "firefox",
+        "extension",
+        "addon",
+        "javascript",
+        "html",
+        "css"
+      ]
     }
   ]
 }
