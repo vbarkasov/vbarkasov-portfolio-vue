@@ -5,17 +5,12 @@
     />
     <h1 class="text-center">Contacts</h1>
     <address>
-      <strong>Telegram:</strong>
-      <a href="tg://resolve?domain=breakingmash">@vbarkasov</a>
+      <strong>Telegram: </strong>
+      <a href="https://t.me/vbarkasov">@vbarkasov</a>
     </address>
 
     <address>
-      <strong>Skype:</strong>
-      <a href="skype:vbarkasov?add">vbarkasov</a>
-    </address>
-
-    <address>
-      <strong>Email:</strong>
+      <strong>Email: </strong>
       <a v-on:click.prevent="showPopup" href="">vbarkasov4pub@gmail.com</a>
     </address>
   </div>

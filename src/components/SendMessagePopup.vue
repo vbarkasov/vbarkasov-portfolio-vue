@@ -58,7 +58,7 @@
 
 <script>
 import VueRecaptcha from 'vue-recaptcha'
-import { gRecaptchaSitekey } from '../config'
+import gRecaptchaSitekey from '../config'
 console.log(gRecaptchaSitekey)
 
 export default {
