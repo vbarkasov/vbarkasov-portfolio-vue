@@ -338,6 +338,32 @@
         "html",
         "css"
       ]
+    },
+    {
+      "id": "014",
+      "slug": "web-service-ads-telegram",
+      "title": "Web service for manage ads in Telegram",
+      "description": "Participated in the creation web service for manage ads in Telegram channels for administrators and advertisers.",
+      "features": [],
+      "timeText": "2021-2022",
+      "previewImage": "/static/portfolio/2021-admint/preview.png",
+      "images": [
+        "/static/portfolio/2021-admint/001.png",
+        "/static/portfolio/2021-admint/002.png",
+        "/static/portfolio/2021-admint/003.png",
+        "/static/portfolio/2021-admint/004.png",
+        "/static/portfolio/2021-admint/005.png",
+        "/static/portfolio/2021-admint/006.png"
+      ],
+      "tags": [
+        "vue",
+        "vuex",
+        "javascript",
+        "html",
+        "scss",
+        "telegram",
+        "ads"
+      ]
     }
   ]
 }
