@@ -341,6 +341,34 @@
     },
     {
       "id": "014",
+      "slug": "bitcoin-exchange-service",
+      "title": "Web-service for exchanging currencies and cryptocurrencies",
+      "description": "The service allows you to quickly order the exchange of one currency for another. Exchange amounts are automatically calculated.",
+      "features": [
+        "Always up-to-date exchange rates",
+        "Minimalistic design",
+        "Fast speed",
+        "User-friendly interface",
+        ""
+      ],
+      "timeText": "2021",
+      "previewImage": "/static/portfolio/2021-admint/preview.png",
+      "images": [
+        "/static/portfolio/2021-bitexchange/001.png"
+      ],
+      "tags": [
+        "vue",
+        "vuex",
+        "javascript",
+        "html",
+        "scss",
+        "bitcoin",
+        "cryptocurrency",
+        "exchange"
+      ]
+    },
+    {
+      "id": "015",
       "slug": "web-service-ads-telegram",
       "title": "Web service for manage ads in Telegram",
       "description": "Participated in the creation web service for manage ads in Telegram channels for administrators and advertisers.",
