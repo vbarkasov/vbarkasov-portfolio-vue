@@ -59,36 +59,36 @@
 
 <script>
 export default {
-  'name': 'PortfolioItem',
+  name: 'PortfolioItem',
   data () {
     return {
-      'slug': '',
-      'swiperOption': {
-        'pagination': {
-          'el': '.swiper-pagination',
-          'clickable': true
+      slug: '',
+      swiperOption: {
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true
         },
-        'navigation': {
-          'nextEl': '.swiper-button-next',
-          'prevEl': '.swiper-button-prev'
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
         },
-        'autoplay': {
-          'delay': 2500,
-          'disableOnInteraction': false
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false
         },
-        'loop': true,
-        'slidesPerView': 1,
-        'spaceBetween': 30
+        loop: true,
+        slidesPerView: 1,
+        spaceBetween: 30
       }
     }
   },
-  'props': ['items'],
-  'computed': {
+  props: ['items'],
+  computed: {
     item () {
       const items = this.items
       let resultItem = {
-        'slug': '',
-        'title': ''
+        slug: '',
+        title: ''
       }
 
       for (const i in items) {
@@ -105,11 +105,10 @@ export default {
       return this.item.title + ' - Portfolio of Vladimir Barkasov'
     }
   },
-
-  'mounted': function () {
+  mounted: function () {
     this.slug = this.$route.params.itemSlug
   },
-  'methods': {
+  methods: {
     hasMore1images (item) {
       return item &&
         item.images &&

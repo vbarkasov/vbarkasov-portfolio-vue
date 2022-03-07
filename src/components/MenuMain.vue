@@ -14,35 +14,35 @@
 
 <script>
 export default {
-  'name': 'MenuMain',
+  name: 'MenuMain',
   data () {
     return {
-      'menuItems': [
+      menuItems: [
         {
-          'title': 'Portfolio',
-          'href': '/'
+          title: 'Portfolio',
+          href: '/'
         },
         {
-          'title': 'Front-end with Vue.js',
-          'href': '/page/front-end-vue'
+          title: 'Front-end with Vue.js',
+          href: '/page/front-end-vue'
         },
         {
-          'title': 'Browser Extensions',
-          'href': '/page/browser-extensions-development'
+          title: 'Browser Extensions',
+          href: '/page/browser-extensions-development'
         },
         {
-          'title': 'About me',
-          'href': '/page/about'
+          title: 'About me',
+          href: '/page/about'
         },
         {
-          'title': 'Contact',
-          'href': '/page/contacts'
+          title: 'Contact',
+          href: '/page/contacts'
         }
       ]
     }
   },
-  'methods': {
-    'scrollToTop': function () {
+  methods: {
+    scrollToTop: function () {
       window.scrollTo(0, 0)
     }
   }

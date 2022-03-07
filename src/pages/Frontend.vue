@@ -29,7 +29,7 @@
   </div>
   <div class="portfolio-list two-columns card-columns px-6">
     <portfolio-card
-      v-for="item in results"
+      v-for="item in portfolioItemsFiltered"
       v-bind:item="item"
       v-bind:key="item.id"
     ></portfolio-card>
@@ -39,33 +39,39 @@
 
 <script>
 import PortfolioCard from '../components/PortfolioCard.vue'
+import portfolioItems from '@/store/data.json'
 
 export default {
-  'name': 'Frontend',
-  'props': ['items'],
-  'components': {
+  name: 'Frontend',
+  components: {
     PortfolioCard
   },
   data () {
     return {
-      'title': 'Front-end with a Vue.js'
+      title: 'Front-end with a Vue.js',
+      portfolioItemsFiltered: []
     }
   },
-  'computed': {
-    'results': function () {
-      const results = []
-
-      if (this.items.length === 0) {
-        return results
+  created () {
+    const portfolioSorted = portfolioItems.items.sort((a, b) => {
+      const timeA = new Date(a.timeText).getTime()
+      const timeB = new Date(b.timeText).getTime()
+      if (timeA > timeB) {
+        return -1
       }
-
-      for (let i = 0, len = this.items.length; i < len; i++) {
-        if (this.items[i].tags.indexOf('vue') !== -1) {
-          results.push(this.items[i])
-        }
+      if (timeA < timeB) {
+        return 1
       }
-      return results
+      return 0
+    })
+
+    const portfolioItemsFiltered = []
+    for (let i = 0, len = portfolioSorted.length; i < len; i++) {
+      if (portfolioSorted[i].tags.indexOf('vue') !== -1) {
+        portfolioItemsFiltered.push(portfolioSorted[i])
+      }
     }
+    this.portfolioItemsFiltered = portfolioItemsFiltered
   }
 }
 </script>

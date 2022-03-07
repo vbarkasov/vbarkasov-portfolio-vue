@@ -51,9 +51,9 @@
     </ul>
     <div class="portfolio-list card-columns mt-5">
       <portfolio-card
-        v-for="result in results"
-        v-bind:item="result"
-        v-bind:key="result.id"
+        v-for="portfolioItem in portfolioItemsFiltered"
+        v-bind:item="portfolioItem"
+        v-bind:key="portfolioItem.id"
       ></portfolio-card>
     </div>
   </div>
@@ -61,39 +61,51 @@
 
 <script>
 import PortfolioCard from '../components/PortfolioCard.vue'
+import portfolioItems from '@/store/data.json'
 
 export default {
-  'name': 'Extensions',
-  'components': {
+  name: 'Extensions',
+  components: {
     PortfolioCard
   },
+  props: ['items'],
   data () {
     return {
-      'title': 'Browser extensions development'
+      title: 'Browser extensions development',
+      portfolioItemsFiltered: []
     }
   },
-  'props': ['items'],
-  'computed': {
-    'results': function () {
-      const results = new Set()
-      const tags = [
-        'extension',
-        'addon'
-      ]
+  created () {
+    const results = new Set()
+    const tags = [
+      'extension',
+      'addon'
+    ]
 
-      if (this.items.length === 0) {
-        return
+    const portfolioSorted = portfolioItems.items.sort((a, b) => {
+      const timeA = new Date(a.timeText).getTime()
+      const timeB = new Date(b.timeText).getTime()
+      if (timeA > timeB) {
+        return -1
       }
+      if (timeA < timeB) {
+        return 1
+      }
+      return 0
+    })
 
-      for (let ti = 0, tlen = tags.length; ti < tlen; ti++) {
-        for (let ii = 0, ilen = this.items.length; ii < ilen; ii++) {
-          if (this.items[ii].tags.indexOf(tags[ti]) !== -1) {
-            results.add(this.items[ii])
-          }
+    if (portfolioSorted.length === 0) {
+      return
+    }
+
+    for (let ti = 0, tlen = tags.length; ti < tlen; ti++) {
+      for (let ii = 0, ilen = portfolioSorted.length; ii < ilen; ii++) {
+        if (portfolioSorted[ii].tags.indexOf(tags[ti]) !== -1) {
+          results.add(portfolioSorted[ii])
         }
       }
-      return Array.from(results)
     }
+    this.portfolioItemsFiltered = Array.from(results)
   }
 }
 </script>

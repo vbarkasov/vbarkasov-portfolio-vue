@@ -34,15 +34,15 @@
 
 <script>
 export default {
-  'name': 'portfolio-card',
+  name: 'portfolio-card',
   data () {
     return {
-      'title': 'Portfolio Card'
+      title: 'Portfolio Card'
     }
   },
-  'props': ['item'],
-  'methods': {
-    'scrollToTop': function () {
+  props: ['item'],
+  methods: {
+    scrollToTop: function () {
       window.scrollTo(0, 0)
     }
   }

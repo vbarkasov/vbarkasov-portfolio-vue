@@ -62,22 +62,22 @@ import gRecaptchaSitekey from '../config'
 console.log(gRecaptchaSitekey)
 
 export default {
-  'name': 'SendMessagePopup',
-  'components': {
+  name: 'SendMessagePopup',
+  components: {
     VueRecaptcha
   },
   data () {
     return {
-      'userMessage': '',
-      'userMessageType': '',
-      'message': '',
-      'email': '',
-      'name': '',
-      'gRecaptchaSitekey': gRecaptchaSitekey,
-      'emailSent': false
+      userMessage: '',
+      userMessageType: '',
+      message: '',
+      email: '',
+      name: '',
+      gRecaptchaSitekey: gRecaptchaSitekey,
+      emailSent: false
     }
   },
-  'methods': {
+  methods: {
     showPopup (e) {
       e.preventDefault()
       this.userMessage = ''
@@ -109,15 +109,15 @@ export default {
       }
 
       fetch('/sendmail.php', {
-        'method': 'POST',
-        'headers': {
-          'Accept': 'application/json',
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
           'Content-Type': 'application/json'
         },
-        'body': JSON.stringify({
-          'name': self.name,
-          'email': self.email,
-          'message': self.message,
+        body: JSON.stringify({
+          name: self.name,
+          email: self.email,
+          message: self.message,
           'g-recaptcha-response': recaptchaToken
         })
       })
@@ -136,8 +136,8 @@ export default {
       this.$refs.recaptcha.reset()
     }
   },
-  'computed': {
-    'emailPopupIsShown': {
+  computed: {
+    emailPopupIsShown: {
       set (val) {
         this.$store.dispatch('setEmailPopupVisibilityStatus', val)
       },

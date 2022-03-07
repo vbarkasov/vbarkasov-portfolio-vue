@@ -65,10 +65,10 @@
 
 <script>
 export default {
-  'name': 'About',
+  name: 'About',
   data () {
     return {
-      'title': 'About me'
+      title: 'About me'
     }
   }
 }

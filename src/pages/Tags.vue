@@ -18,15 +18,15 @@
 import PortfolioCard from '../components/PortfolioCard.vue'
 
 export default {
-  'name': 'Tags',
+  name: 'Tags',
   data () {
     return {
-      'title': 'Tags'
+      title: 'Tags'
     }
   },
-  'props': ['items'],
-  'computed': {
-    'results': function () {
+  props: ['items'],
+  computed: {
+    results: function () {
       const results = new Set()
 
       if (this.items.length === 0 || this.tags.length === 0) {
@@ -42,22 +42,22 @@ export default {
       }
       return Array.from(results)
     },
-    'tags': function () {
+    tags: function () {
       let tags = decodeURIComponent(this.$route.params.tags)
       if (tags) {
         tags = tags.split('&')
       }
       return tags
     },
-    'pageTitle': function () {
+    pageTitle: function () {
       return this.tags.join(' ') + ' - Portfolio site of Vladimir Barkasov'
     }
   },
-  'mounted': function () {},
-  'components': {
+  mounted: function () {},
+  components: {
     PortfolioCard
   },
-  'methods': {}
+  methods: {}
 }
 </script>
 

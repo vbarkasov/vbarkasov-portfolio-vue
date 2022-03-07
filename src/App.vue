@@ -4,7 +4,7 @@
     <div class="row mb-3 content-container">
       <div class="col-12">
         <transition name="fade" mode="out-in">
-          <router-view v-bind:items="items"/>
+          <router-view />
         </transition>
       </div>
     </div>
@@ -14,41 +14,18 @@
 </template>
 
 <script>
-import Header from './components/Header.vue'
-import Footer from './components/Footer.vue'
-import SendMessagePopup from './components/SendMessagePopup.vue'
+import Header from '@/components/Header.vue'
+import Footer from '@/components/Footer.vue'
+import SendMessagePopup from '@/components/SendMessagePopup.vue'
 
 export default {
-  'name': 'App',
+  name: 'App',
   data () {
     return {
-      'title': 'Vladimir Barkasov - Portfolio',
-      'items': []
+      title: 'Vladimir Barkasov - Portfolio'
     }
   },
-  'mounted': function () {
-    const self = this
-
-    fetch('/static/portfolio/data.json')
-      .then(function (response) {
-        return response.json()
-      })
-      .then(function (data) {
-        const sortedItems = data.items.sort((a, b) => {
-          // sort by time (newest in up)
-          if (new Date(a.timeText) > new Date(b.timeText)) {
-            return -1
-          }
-          if (new Date(a.timeText) < new Date(b.timeText)) {
-            return 1
-          }
-          return 0
-        })
-
-        self.items = Object.assign([], self.items, sortedItems)
-      })
-  },
-  'components': {
+  components: {
     Header,
     Footer,
     SendMessagePopup

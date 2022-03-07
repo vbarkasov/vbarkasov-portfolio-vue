@@ -16,11 +16,11 @@
 import MenuMain from './MenuMain.vue'
 
 export default {
-  'name': 'Header',
+  name: 'Header',
   data () {
     return {}
   },
-  'components': {
+  components: {
     MenuMain
   }
 }

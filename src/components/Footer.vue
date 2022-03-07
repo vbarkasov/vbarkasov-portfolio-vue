@@ -1,7 +1,7 @@
 <template>
   <footer class="footer row py-3 px-4">
     <div class="col-6">
-      <h5 class="text-muted">Контакты</h5>
+      <h5 class="text-muted">Contacts</h5>
       <ul class="block-list">
         <li class="text-left list-item list-item__left">
           <a class="vb-icon email hvr-float-shadow" v-on:click.prevent="showPopup" href="">Send email</a>
@@ -13,7 +13,7 @@
     </div>
     <div class="col-6">
       <div class="float-right">
-        <h5 class="text-muted">Способы оплаты</h5>
+        <h5 class="text-muted">Payment methods</h5>
         <ul class="block-list">
           <li v-for="(pm, index) in paymentMethods" :key="'payment_' + index" class="text-left list-item list-item__right">
             <a :href="pm.href" class="vb-icon hvr-float-shadow" target="_blank" :title="pm.title" :class="pm.iconClass"></a>
@@ -26,46 +26,46 @@
 
 <script>
 export default {
-  'name': 'Footer',
+  name: 'Footer',
   data () {
     return {
-      'paymentMethods': [
+      paymentMethods: [
         {
-          'title': 'Qiwi',
-          'href': 'https://qiwi.com/',
-          'iconClass': 'qiwi'
+          title: 'Qiwi',
+          href: 'https://qiwi.com/',
+          iconClass: 'qiwi'
         }, {
-          'title': 'Яндекс Деньги',
-          'href': 'https://money.yandex.ru/',
-          'iconClass': 'yandex-money'
+          title: 'Яндекс Деньги',
+          href: 'https://money.yandex.ru/',
+          iconClass: 'yandex-money'
         }, {
-          'title': 'Bitcoin',
-          'href': 'https://bitcoin.org/en/',
-          'iconClass': 'bitcoin'
+          title: 'Bitcoin',
+          href: 'https://bitcoin.org/en/',
+          iconClass: 'bitcoin'
         }, {
-          'title': 'PayPal',
-          'href': 'https://www.paypal.com/',
-          'iconClass': 'paypal'
+          title: 'PayPal',
+          href: 'https://www.paypal.com/',
+          iconClass: 'paypal'
         }, {
-          'title': 'MasterCard',
-          'href': 'https://www.mastercard.com/',
-          'iconClass': 'mastercard'
+          title: 'MasterCard',
+          href: 'https://www.mastercard.com/',
+          iconClass: 'mastercard'
         }
       ],
-      'contacts': [
+      contacts: [
         /* {
-          'title': 'Email',
-          'href': 'mailto:vbarkasov4dev@gmail.com',
-          'iconClass': 'email'
+          title: 'Email',
+          href: 'mailto:vbarkasov4dev@gmail.com',
+          iconClass: 'email'
         }, */{
-          'title': 'Telegram',
-          'href': 'tg://resolve?domain=vbarkasov',
-          'iconClass': 'telegram'
+          title: 'Telegram',
+          href: 'tg://resolve?domain=vbarkasov',
+          iconClass: 'telegram'
         }
       ]
     }
   },
-  'methods': {
+  methods: {
     showPopup () {
       this.$store.dispatch('setEmailPopupVisibilityStatus', true)
     }
