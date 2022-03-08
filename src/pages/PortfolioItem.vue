@@ -58,6 +58,8 @@
 </template>
 
 <script>
+import portfolioItems from '@/store/data.json'
+
 export default {
   name: 'PortfolioItem',
   data () {
@@ -82,10 +84,9 @@ export default {
       }
     }
   },
-  props: ['items'],
   computed: {
     item () {
-      const items = this.items
+      const items = portfolioItems.items
       let resultItem = {
         slug: '',
         title: ''

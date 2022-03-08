@@ -26,13 +26,13 @@
       </ul>
     </div>
     <h2 class="text-center">Examples:</h2>
-  </div>
-  <div class="portfolio-list two-columns card-columns px-6">
-    <portfolio-card
-      v-for="item in portfolioItemsFiltered"
-      v-bind:item="item"
-      v-bind:key="item.id"
-    ></portfolio-card>
+    <div class="portfolio-list two-columns card-columns px-6">
+      <portfolio-card
+        v-for="item in portfolioItemsFiltered"
+        v-bind:item="item"
+        v-bind:key="item.id"
+      ></portfolio-card>
+    </div>
   </div>
 </div>
 </template>

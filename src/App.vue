@@ -2,7 +2,7 @@
   <div id="app" class="container-fluid">
     <Header></Header>
     <div class="row mb-3 content-container">
-      <div class="col-12">
+      <div class="col-12 p-0">
         <transition name="fade" mode="out-in">
           <router-view />
         </transition>
@@ -17,6 +17,8 @@
 import Header from '@/components/Header.vue'
 import Footer from '@/components/Footer.vue'
 import SendMessagePopup from '@/components/SendMessagePopup.vue'
+import 'bootstrap/dist/css/bootstrap.css'
+import '@/assets/styles/main.scss'
 
 export default {
   name: 'App',
@@ -34,9 +36,6 @@ export default {
 </script>
 
 <style>
-  @import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-  @import 'assets/css/main.css';
-
   #app {}
 
   .card {

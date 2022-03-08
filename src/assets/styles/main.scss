@@ -76,3 +76,34 @@ nav a {
     margin-bottom: 20px;
   }
 }
+
+.card-columns .card {
+  margin: 0.25rem 0.25rem 1.25rem 0.25rem;
+
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  &:hover {
+    -webkit-transform: scale(1.01);
+    transform: scale(1.01);
+  }
+}
+
+@media (min-width: 576px) {
+  .card-columns {
+    -webkit-column-gap: 1.5rem;
+    -moz-column-gap: 1.5rem;
+    column-gap: 1.5rem;
+    column-count: 2;
+  }
+}
+
+@media (min-width: 800px) {
+  .card-columns {
+    -webkit-column-gap: 1.5rem;
+    -moz-column-gap: 1.5rem;
+    column-gap: 1.5rem;
+    column-count: 3;
+  }
+}
+
+

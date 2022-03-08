@@ -49,7 +49,7 @@
         </p>
       </li>
     </ul>
-    <div class="portfolio-list card-columns mt-5">
+    <div class="portfolio-list card-columns two-columns mt-5 px-6">
       <portfolio-card
         v-for="portfolioItem in portfolioItemsFiltered"
         v-bind:item="portfolioItem"
