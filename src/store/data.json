@@ -348,11 +348,10 @@
         "Always up-to-date exchange rates",
         "Minimalistic design",
         "Fast speed",
-        "User-friendly interface",
-        ""
+        "User-friendly interface"
       ],
       "timeText": "2021",
-      "previewImage": "/static/portfolio/2021-admint/preview.png",
+      "previewImage": "/static/portfolio/2021-bitexchange/001.png",
       "images": [
         "/static/portfolio/2021-bitexchange/001.png"
       ],
